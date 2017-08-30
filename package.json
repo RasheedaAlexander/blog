@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RasheedaAlexander/blog.git"
+  },
+  "author": "Rasheeda Alexander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RasheedaAlexander/blog.git/issues"
+  },
+  "homepage": "https://github.com/RasheedaAlexander/blog.git#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1"
+  }
+}

@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  flex-direction: column;
+header {
+    grid-area: header;
+    border: 2px solid black;
+}
+.main {
+    grid-area: main;
+    border: 2px solid black;
+}
+.sidebar {
+    grid-area: sidebar;
+    border: 2px solid black;
+}
+footer {
+    grid-area: footer;
+    border: 2px solid black;
+}
+}
