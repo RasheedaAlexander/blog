@@ -1,20 +1,99 @@
+* {
+  box-sizing: border-box;
+}
 .container {
   display: grid;
   flex-direction: column;
-header {
+  grid-template-rows: 40px;
+  grid-auto-rows: minmax(100px, auto-fit);
+  grid-template-columns: minmax(auto-fit, 100%);
+  grid-template-areas: "nav nav" "header header" "main sidebar" "footer footer";
+  height: calc(100vh - 10px);
+
+  > * {
+    padding: 15px;
+  }
+
+  .nav {
+    background: red;
+    grid-area: nav;
+
+    .nav-items {
+      grid-area: menu;
+      display: inline;
+      list-style: none;
+      justify-content: end;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  .header {
     grid-area: header;
-    border: 2px solid black;
-}
-.main {
+    background-image: url("https://www.thewilliamsburghotel.com/wp-content/uploads/1200500.png");
+    background-size: cover;
+  }
+
+
+  .main {
     grid-area: main;
-    border: 2px solid black;
-}
-.sidebar {
+    background: yellow;
+    overflow-y: hidden;
+
+    .post {
+      grid-area: post;
+
+      .wrapper {
+        width: 50%;
+        display: inline-block;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .sidebar {
     grid-area: sidebar;
-    border: 2px solid black;
-}
-footer {
+    background: green;
+
+    .ad-wrapper {
+      background: white;
+
+    }
+  }
+
+  .footer {
     grid-area: footer;
-    border: 2px solid black;
+    background: orange;
+  }
 }
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .container {
+    display: grid;
+    flex-direction: column;
+
+    .header {
+      grid-area: header;
+    }
+
+    .main {
+      grid-area: main;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+  }
 }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
