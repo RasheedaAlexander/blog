@@ -1,85 +1,121 @@
 * {
   box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
 }
-.container {
-  display: grid;
-  flex-direction: column;
-  grid-template-rows: 40px;
-  grid-auto-rows: minmax(100px, auto-fit);
-  grid-template-columns: minmax(auto-fit, 100%);
-  grid-template-areas: "nav nav" "header header" "main sidebar" "footer footer";
-  height: calc(100vh - 10px);
 
-  > * {
-    padding: 15px;
-  }
+body {
 
-  .nav {
-    background: red;
-    grid-area: nav;
-
-    .nav-items {
-      grid-area: menu;
-      display: inline;
-      list-style: none;
-      justify-content: end;
-
-      li {
-        display: inline-block;
-      }
-    }
-  }
-
-  .header {
-    grid-area: header;
-    background-image: url("https://www.thewilliamsburghotel.com/wp-content/uploads/1200500.png");
-    background-size: cover;
-  }
-
-
-  .main {
-    grid-area: main;
-    background: yellow;
-    overflow-y: hidden;
-
-    .post {
-      grid-area: post;
-
-      .wrapper {
-        width: 50%;
-        display: inline-block;
-        margin-left: 30px;
-      }
-    }
-  }
-
-  .sidebar {
-    grid-area: sidebar;
-    background: green;
-
-    .ad-wrapper {
-      background: white;
-
-    }
-  }
-
-  .footer {
-    grid-area: footer;
-    background: orange;
-  }
-}
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
   .container {
     display: grid;
     flex-direction: column;
+    // grid-template-rows: 40px;
+    grid-auto-columns: max-content;
+    grid-auto-rows: max-content;
+    grid-template-columns: minmax(70%, auto);
+    grid-template-areas: "nav nav" "header header" "main sidebar" "footer footer";
 
+    > * {
+      padding: 15px;
+    }
+
+    .nav {
+      background: red;
+      grid-area: nav;
+      text-align: end;
+
+      .nav-items {
+        grid-area: menu;
+        display: inline;
+        list-style: none;
+        justify-content: end;
+
+        li {
+          display: inline-block;
+        }
+      }
+
+      .visible, .hidden {
+        display: none;
+      }
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    .header {
+      grid-area: header;
+      background-image: url("http://i2.cdn.cnn.com/cnnnext/dam/assets/131213113834-04-beyonce-horizontal-large-gallery.jpg");
+      background-size: cover;
+    }
+
+    .main {
+      grid-area: main;
+      background: yellow;
+
+      .post {
+        grid-area: post;
+        margin-top: 10px;
+
+        .wrapper {
+          width: 50%;
+          display: inline-block;
+          margin-left: 30px;
+          font-size: 16px;
+          vertical-align: top;
+        }
+      }
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: green;
+
+      .ad-wrapper {
+        background: white;
+      }
+    }
+
+    .footer {
+      grid-area: footer;
+      background: orange;
+    }
+  }
+
+  }
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .container {
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: minmax(100%, auto);
+    grid-template-areas: "nav" "header" "main" "sidebar" "footer";
+    text-align: center;
+
+    .nav {
+      .nav-items {
+        li {
+          display: block;
+          text-align: left;
+        }
+      }
+}
     .header {
       grid-area: header;
     }
 
     .main {
       grid-area: main;
+      text-align: center;
+
+      .post {
+        .wrapper {
+          display: block;
+          width: 100%;
+          margin: 20px auto;
+          padding: 0.9375em;
+        }
+      }
     }
 
     .sidebar {
@@ -91,6 +127,7 @@
     }
   }
 }
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {}
 // Large devices (desktops, 992px and up)
